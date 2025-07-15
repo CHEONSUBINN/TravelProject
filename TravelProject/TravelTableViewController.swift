@@ -18,6 +18,8 @@ struct Magazine {
 
 class TravelTableViewController: UITableViewController {
     
+    let format = DateFormatter()
+    
     let magazine: [Magazine] = [
         Magazine(title: "유럽 여행 쇼핑 성지, OOO은 꼭 가세요!", subtitle: "유럽의 인기 쇼핑 명소 총정리", photo_image: "https://cdn.pixabay.com/photo/2016/11/22/21/57/apparel-1850804_1280.jpg", date: "241118", link: "https://triple.guide/articles/265bd919-3f75-4adc-8d5d-c5cf60201bfe"),
         Magazine(title: "현지 MZ가 알려주는 오사카 MZ 인기 스팟", subtitle: "2025 오사카 여행엔 여기!", photo_image: "https://cdn.pixabay.com/photo/2020/10/22/14/05/moon-5676124_1280.jpg", date: "250103", link: "https://triple.guide/articles/d6c5257f-4d52-4a0a-aed2-6773961ee7be"),
@@ -52,17 +54,19 @@ class TravelTableViewController: UITableViewController {
         print(#function, indexPath.row)
         
         let cell = tableView.dequeueReusableCell(withIdentifier: TravelTableViewCell.identifier, for: indexPath) as! TravelTableViewCell
+        
+        format.dateFormat = "yy년 MM월 dd일"
+        
         let row = magazine[indexPath.row]
         
         let url = URL(string: "\(magazine[indexPath.row].photo_image)")
         
         
         cell.configureCell(row: row)
-        
+        cell.photoImage.kf.setImage(with: url)
         //        cell.configuretitleLabel(row: row)
         //        cell.configuresubtitleLabel(row: row)
         //        cell.configuredateLabel(row: row)
-        cell.photoImage.kf.setImage(with: url)
         
         return cell
     }
@@ -76,6 +80,7 @@ class TravelTableViewController: UITableViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
         let viewController = storyboard.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
+        
         
         navigationController?.pushViewController(viewController, animated: true)
     }

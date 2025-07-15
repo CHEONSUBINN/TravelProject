@@ -9,9 +9,11 @@ import UIKit
 
 class InfoTableViewCell: UITableViewCell {
 
+    @IBOutlet var infoImage: UIImageView!
+    @IBOutlet var infoLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     
     }
 

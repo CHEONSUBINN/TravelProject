@@ -25,9 +25,11 @@ class TravelTableViewCell: UITableViewCell {
     func configureCell(row: Magazine) {
         titleLabel.text = row.title
         titleLabel.font = .boldSystemFont(ofSize: 17)
+        titleLabel.numberOfLines = 0
         
         subTitleLabel.text = row.subtitle
         subTitleLabel.tintColor = .lightGray
+        subTitleLabel.numberOfLines = 0
         
         dateLabel.text = row.date
         dateLabel.tintColor = .lightGray

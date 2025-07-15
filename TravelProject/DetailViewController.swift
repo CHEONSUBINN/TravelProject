@@ -15,16 +15,17 @@ class DetailViewController: UIViewController {
     @IBOutlet var subtitleLabel: UILabel!
     @IBOutlet var otherButton: UIButton!
     
-    
+    var contents: String = "빈 공간"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
 //        setBackgroundColor()
         
+        print(contents)
         detailImage.backgroundColor = .black
         
-        titleLabel.text = "여행에 가고 싶으신가요?"
+        titleLabel.text = contents
         titleLabel.textColor = .black
         titleLabel.numberOfLines = 0
         

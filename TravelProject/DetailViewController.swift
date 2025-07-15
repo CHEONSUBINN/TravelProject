@@ -15,14 +15,20 @@ class DetailViewController: UIViewController {
     @IBOutlet var subtitleLabel: UILabel!
     @IBOutlet var otherButton: UIButton!
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+//        setBackgroundColor()
+        
+        detailImage.backgroundColor = .black
+        
+        titleLabel.text = "여행에 가고 싶으신가요?"
+        titleLabel.textColor = .black
+        titleLabel.numberOfLines = 0
         
     }
-    func configureCell(row: Magazine) {
-        titleLabel.text = row.title
-        titleLabel.font = .boldSystemFont(ofSize: 20)
-    }
+    
     
 }

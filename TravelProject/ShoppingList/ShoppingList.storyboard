@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23727" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5FF-LW-9n7">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23721"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Shopping List Table View Controller-->
+        <scene sceneID="tqU-5E-Zxw">
+            <objects>
+                <tableViewController id="5FF-LW-9n7" customClass="ShoppingListTableViewController" customModule="TravelProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="ePq-8D-Rap">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="6yR-s9-ctN">
+                            <rect key="frame" x="0.0" y="0.0" width="393" height="66"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sp2-nD-VIt">
+                                    <rect key="frame" x="294" y="14" width="75" height="40"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="40" id="nQ1-Ua-14l"/>
+                                    </constraints>
+                                    <state key="normal" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                    <connections>
+                                        <action selector="addButtonClicked:" destination="5FF-LW-9n7" eventType="touchUpInside" id="2zl-P1-GkH"/>
+                                    </connections>
+                                </button>
+                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="j6X-av-F7w">
+                                    <rect key="frame" x="24" y="10" width="260" height="40"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="40" id="VdS-Ia-t19"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </textField>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstItem="j6X-av-F7w" firstAttribute="leading" secondItem="6yR-s9-ctN" secondAttribute="leading" constant="24" id="7RA-AS-ESN"/>
+                                <constraint firstItem="Sp2-nD-VIt" firstAttribute="leading" secondItem="j6X-av-F7w" secondAttribute="trailing" constant="10" id="OrV-MY-vH8"/>
+                                <constraint firstAttribute="trailing" secondItem="Sp2-nD-VIt" secondAttribute="trailing" constant="24" id="d9N-yb-hZP"/>
+                                <constraint firstItem="Sp2-nD-VIt" firstAttribute="top" secondItem="6yR-s9-ctN" secondAttribute="top" constant="14" id="rry-3l-Lqt"/>
+                                <constraint firstItem="j6X-av-F7w" firstAttribute="top" secondItem="6yR-s9-ctN" secondAttribute="top" constant="10" id="tvm-pw-24U"/>
+                            </constraints>
+                        </view>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="ListCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ListCell" rowHeight="84" id="Vng-As-KJi" customClass="ShoppingListTableViewCell" customModule="TravelProject" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="116" width="393" height="84"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Vng-As-KJi" id="Llh-pd-f50">
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="84"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TLl-IX-icK">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="84"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="TLl-IX-icK" secondAttribute="bottom" id="CDw-om-uze"/>
+                                        <constraint firstItem="TLl-IX-icK" firstAttribute="leading" secondItem="Llh-pd-f50" secondAttribute="leading" id="DDi-Iu-nD1"/>
+                                        <constraint firstItem="TLl-IX-icK" firstAttribute="top" secondItem="Llh-pd-f50" secondAttribute="top" id="QwA-nK-4th"/>
+                                        <constraint firstAttribute="trailing" secondItem="TLl-IX-icK" secondAttribute="trailing" id="Sxm-9N-A7j"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="listLabel" destination="TLl-IX-icK" id="WDm-xY-ljL"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                    </tableView>
+                    <connections>
+                        <outlet property="addTextField" destination="j6X-av-F7w" id="kBT-yT-puI"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pbf-wA-18d" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="752" y="-2"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

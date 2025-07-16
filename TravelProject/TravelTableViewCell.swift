@@ -20,6 +20,7 @@ class TravelTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
+    
     }
     
     func configureCell(row: Magazine) {
@@ -31,7 +32,7 @@ class TravelTableViewCell: UITableViewCell {
         subTitleLabel.tintColor = .lightGray
         subTitleLabel.numberOfLines = 0
         
-        dateLabel.text = row.date
+        dateLabel.text = "\(row.date)"
         dateLabel.tintColor = .lightGray
     }
     

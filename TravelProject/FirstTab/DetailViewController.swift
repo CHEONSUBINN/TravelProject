@@ -19,7 +19,7 @@ class DetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+            
         otherButton.configure(title: "다른 관광지 보러가기")
         
         let url = URL(string: contents.photo_image)

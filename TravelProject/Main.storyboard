@@ -194,7 +194,7 @@
                                 </connections>
                             </segmentedControl>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="4vI-g9-47X">
-                                <rect key="frame" x="10" y="204" width="373" height="570"/>
+                                <rect key="frame" x="10" y="209" width="373" height="565"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="EFR-i0-HDz">
                                     <size key="itemSize" width="128" height="128"/>
@@ -213,27 +213,33 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ynF-Ui-5KB">
-                                <rect key="frame" x="159" y="161" width="75" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ynF-Ui-5KB">
+                                <rect key="frame" x="155" y="164" width="75" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="YhT-NV-dAI"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Button"/>
                                 <connections>
                                     <action selector="domesticButtonClicked:" destination="Sih-Bt-Gfu" eventType="touchUpInside" id="eMC-Qm-l56"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zUE-uz-0MM">
-                                <rect key="frame" x="308" y="161" width="75" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zUE-uz-0MM">
+                                <rect key="frame" x="303" y="164" width="75" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="uVv-BB-Vgi"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Button"/>
                                 <connections>
                                     <action selector="foreignButtonClicked:" destination="Sih-Bt-Gfu" eventType="touchUpInside" id="N1T-a3-raE"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="164-1c-agm">
-                                <rect key="frame" x="10" y="161" width="75" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="164-1c-agm">
+                                <rect key="frame" x="15" y="164" width="75" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="NrL-AX-BRl"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Button"/>
                                 <connections>
@@ -244,13 +250,21 @@
                         <viewLayoutGuide key="safeArea" id="cCx-sW-Xl8"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="cCx-sW-Xl8" firstAttribute="trailing" secondItem="zUE-uz-0MM" secondAttribute="trailing" constant="15" id="9vc-1m-9IO"/>
+                            <constraint firstItem="4vI-g9-47X" firstAttribute="top" secondItem="164-1c-agm" secondAttribute="bottom" constant="10" id="CQU-SH-tgv"/>
                             <constraint firstItem="cCx-sW-Xl8" firstAttribute="bottom" secondItem="4vI-g9-47X" secondAttribute="bottom" constant="10" id="Cea-at-kva"/>
                             <constraint firstItem="4vI-g9-47X" firstAttribute="leading" secondItem="cCx-sW-Xl8" secondAttribute="leading" constant="10" id="Khw-78-DH5"/>
+                            <constraint firstItem="ynF-Ui-5KB" firstAttribute="leading" secondItem="164-1c-agm" secondAttribute="trailing" constant="70" id="TY2-MH-UjG"/>
                             <constraint firstItem="cCx-sW-Xl8" firstAttribute="trailing" secondItem="4vI-g9-47X" secondAttribute="trailing" constant="10" id="UsI-Se-Rmc"/>
                             <constraint firstItem="cCx-sW-Xl8" firstAttribute="trailing" secondItem="qNw-VL-WqH" secondAttribute="trailing" constant="14" id="YaA-Ia-XeO"/>
-                            <constraint firstItem="4vI-g9-47X" firstAttribute="top" secondItem="qNw-VL-WqH" secondAttribute="bottom" constant="45" id="a1L-9h-2IX"/>
                             <constraint firstItem="qNw-VL-WqH" firstAttribute="leading" secondItem="cCx-sW-Xl8" secondAttribute="leading" constant="14" id="a7H-UV-Uns"/>
+                            <constraint firstItem="ynF-Ui-5KB" firstAttribute="top" secondItem="qNw-VL-WqH" secondAttribute="bottom" constant="5" id="auz-K4-Isi"/>
                             <constraint firstItem="qNw-VL-WqH" firstAttribute="top" secondItem="cCx-sW-Xl8" secondAttribute="top" constant="10" id="fls-gO-bTO"/>
+                            <constraint firstItem="4vI-g9-47X" firstAttribute="top" secondItem="ynF-Ui-5KB" secondAttribute="bottom" constant="10" id="hfJ-0a-zWk"/>
+                            <constraint firstItem="164-1c-agm" firstAttribute="leading" secondItem="cCx-sW-Xl8" secondAttribute="leading" constant="15" id="nwT-lt-yNJ"/>
+                            <constraint firstItem="4vI-g9-47X" firstAttribute="top" secondItem="zUE-uz-0MM" secondAttribute="bottom" constant="10" id="rkB-mb-9Ua"/>
+                            <constraint firstItem="164-1c-agm" firstAttribute="top" secondItem="qNw-VL-WqH" secondAttribute="bottom" constant="5" id="scc-LU-uls"/>
+                            <constraint firstItem="zUE-uz-0MM" firstAttribute="leading" secondItem="ynF-Ui-5KB" secondAttribute="trailing" constant="70" id="wAK-34-7RD"/>
                         </constraints>
                     </view>
                     <connections>

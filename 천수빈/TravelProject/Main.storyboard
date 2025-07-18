@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23727" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="MnJ-Ut-phv">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23727" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Sih-Bt-Gfu">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23721"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -104,7 +105,7 @@
             </objects>
             <point key="canvasLocation" x="3736.6412213740455" y="-71.126760563380287"/>
         </scene>
-        <!--Item-->
+        <!--369Game-->
         <scene sceneID="Zr4-cU-zLD">
             <objects>
                 <viewController id="AYr-kX-esK" customClass="GameViewController" customModule="TravelProject" customModuleProvider="target" sceneMemberID="viewController">
@@ -161,7 +162,7 @@
                             <outletCollection property="gestureRecognizers" destination="xOh-I6-LoE" appends="YES" id="8oT-Wd-vV9"/>
                         </connections>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" selectedImage="numbers.rectangle" catalog="system" id="2bV-ha-wvO"/>
+                    <tabBarItem key="tabBarItem" title="369Game" selectedImage="gamecontroller.fill" catalog="system" id="2bV-ha-wvO"/>
                     <connections>
                         <outlet property="resultLabel" destination="2Qo-6z-lUd" id="fqb-Bh-any"/>
                         <outlet property="resultTextView" destination="LU1-Ws-1Xy" id="s7F-BM-Ew8"/>
@@ -172,6 +173,107 @@
                 <tapGestureRecognizer id="xOh-I6-LoE"/>
             </objects>
             <point key="canvasLocation" x="1321" y="623"/>
+        </scene>
+        <!--City View Controller-->
+        <scene sceneID="nOA-00-X51">
+            <objects>
+                <viewController storyboardIdentifier="CityViewController" id="Sih-Bt-Gfu" customClass="CityViewController" customModule="TravelProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1ko-Ln-S5J">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="qNw-VL-WqH">
+                                <rect key="frame" x="14" y="128" width="365" height="32"/>
+                                <segments>
+                                    <segment title="모두"/>
+                                    <segment title="국내"/>
+                                    <segment title="해외"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segmentedClicked:" destination="Sih-Bt-Gfu" eventType="valueChanged" id="J5M-mE-Q7s"/>
+                                </connections>
+                            </segmentedControl>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="4vI-g9-47X">
+                                <rect key="frame" x="10" y="209" width="373" height="565"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="EFR-i0-HDz">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="iDh-3z-vR6">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="VR3-Ut-ZLV">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ynF-Ui-5KB">
+                                <rect key="frame" x="155" y="164" width="75" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="YhT-NV-dAI"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <action selector="domesticButtonClicked:" destination="Sih-Bt-Gfu" eventType="touchUpInside" id="eMC-Qm-l56"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zUE-uz-0MM">
+                                <rect key="frame" x="303" y="164" width="75" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="uVv-BB-Vgi"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <action selector="foreignButtonClicked:" destination="Sih-Bt-Gfu" eventType="touchUpInside" id="N1T-a3-raE"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="164-1c-agm">
+                                <rect key="frame" x="15" y="164" width="75" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="NrL-AX-BRl"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <action selector="allButtonClicked:" destination="Sih-Bt-Gfu" eventType="touchUpInside" id="zcv-79-Ixx"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="cCx-sW-Xl8"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="cCx-sW-Xl8" firstAttribute="trailing" secondItem="zUE-uz-0MM" secondAttribute="trailing" constant="15" id="9vc-1m-9IO"/>
+                            <constraint firstItem="4vI-g9-47X" firstAttribute="top" secondItem="164-1c-agm" secondAttribute="bottom" constant="10" id="CQU-SH-tgv"/>
+                            <constraint firstItem="cCx-sW-Xl8" firstAttribute="bottom" secondItem="4vI-g9-47X" secondAttribute="bottom" constant="10" id="Cea-at-kva"/>
+                            <constraint firstItem="4vI-g9-47X" firstAttribute="leading" secondItem="cCx-sW-Xl8" secondAttribute="leading" constant="10" id="Khw-78-DH5"/>
+                            <constraint firstItem="ynF-Ui-5KB" firstAttribute="leading" secondItem="164-1c-agm" secondAttribute="trailing" constant="70" id="TY2-MH-UjG"/>
+                            <constraint firstItem="cCx-sW-Xl8" firstAttribute="trailing" secondItem="4vI-g9-47X" secondAttribute="trailing" constant="10" id="UsI-Se-Rmc"/>
+                            <constraint firstItem="cCx-sW-Xl8" firstAttribute="trailing" secondItem="qNw-VL-WqH" secondAttribute="trailing" constant="14" id="YaA-Ia-XeO"/>
+                            <constraint firstItem="qNw-VL-WqH" firstAttribute="leading" secondItem="cCx-sW-Xl8" secondAttribute="leading" constant="14" id="a7H-UV-Uns"/>
+                            <constraint firstItem="ynF-Ui-5KB" firstAttribute="top" secondItem="qNw-VL-WqH" secondAttribute="bottom" constant="5" id="auz-K4-Isi"/>
+                            <constraint firstItem="qNw-VL-WqH" firstAttribute="top" secondItem="cCx-sW-Xl8" secondAttribute="top" constant="10" id="fls-gO-bTO"/>
+                            <constraint firstItem="4vI-g9-47X" firstAttribute="top" secondItem="ynF-Ui-5KB" secondAttribute="bottom" constant="10" id="hfJ-0a-zWk"/>
+                            <constraint firstItem="164-1c-agm" firstAttribute="leading" secondItem="cCx-sW-Xl8" secondAttribute="leading" constant="15" id="nwT-lt-yNJ"/>
+                            <constraint firstItem="4vI-g9-47X" firstAttribute="top" secondItem="zUE-uz-0MM" secondAttribute="bottom" constant="10" id="rkB-mb-9Ua"/>
+                            <constraint firstItem="164-1c-agm" firstAttribute="top" secondItem="qNw-VL-WqH" secondAttribute="bottom" constant="5" id="scc-LU-uls"/>
+                            <constraint firstItem="zUE-uz-0MM" firstAttribute="leading" secondItem="ynF-Ui-5KB" secondAttribute="trailing" constant="70" id="wAK-34-7RD"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="myCollectionView" destination="4vI-g9-47X" id="BCw-pb-S0e"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tSP-cq-Dd0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1321" y="1282"/>
         </scene>
         <!--Travel Table View Controller-->
         <scene sceneID="mZM-zW-qgq">
@@ -410,8 +512,8 @@
     </scenes>
     <resources>
         <image name="airplane.circle" catalog="system" width="128" height="123"/>
+        <image name="gamecontroller.fill" catalog="system" width="128" height="79"/>
         <image name="list.bullet.rectangle.portrait" catalog="system" width="115" height="128"/>
-        <image name="numbers.rectangle" catalog="system" width="128" height="93"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

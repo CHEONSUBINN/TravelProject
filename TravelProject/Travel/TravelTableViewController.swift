@@ -37,10 +37,6 @@ class TravelTableViewController: UITableViewController {
         cell.configureCell(row: row)
         cell.photoImage.kf.setImage(with: url)
         
-        //        cell.configuretitleLabel(row: row)
-        //        cell.configuresubtitleLabel(row: row)
-        //        cell.configuredateLabel(row: row)
-        
         return cell
     }
     

@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23727" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="MnJ-Ut-phv">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23727" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Sih-Bt-Gfu">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23721"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -104,7 +105,7 @@
             </objects>
             <point key="canvasLocation" x="3736.6412213740455" y="-71.126760563380287"/>
         </scene>
-        <!--Item-->
+        <!--369Game-->
         <scene sceneID="Zr4-cU-zLD">
             <objects>
                 <viewController id="AYr-kX-esK" customClass="GameViewController" customModule="TravelProject" customModuleProvider="target" sceneMemberID="viewController">
@@ -161,7 +162,7 @@
                             <outletCollection property="gestureRecognizers" destination="xOh-I6-LoE" appends="YES" id="8oT-Wd-vV9"/>
                         </connections>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" selectedImage="numbers.rectangle" catalog="system" id="2bV-ha-wvO"/>
+                    <tabBarItem key="tabBarItem" title="369Game" selectedImage="gamecontroller.fill" catalog="system" id="2bV-ha-wvO"/>
                     <connections>
                         <outlet property="resultLabel" destination="2Qo-6z-lUd" id="fqb-Bh-any"/>
                         <outlet property="resultTextView" destination="LU1-Ws-1Xy" id="s7F-BM-Ew8"/>
@@ -173,10 +174,10 @@
             </objects>
             <point key="canvasLocation" x="1321" y="623"/>
         </scene>
-        <!--View Controller-->
+        <!--City View Controller-->
         <scene sceneID="nOA-00-X51">
             <objects>
-                <viewController id="Sih-Bt-Gfu" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CityViewController" id="Sih-Bt-Gfu" customClass="CityViewController" customModule="TravelProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1ko-Ln-S5J">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -184,28 +185,77 @@
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="qNw-VL-WqH">
                                 <rect key="frame" x="14" y="128" width="365" height="32"/>
                                 <segments>
-                                    <segment title="First"/>
-                                    <segment title="Second"/>
-                                    <segment title=""/>
+                                    <segment title="모두"/>
+                                    <segment title="국내"/>
+                                    <segment title="해외"/>
                                 </segments>
+                                <connections>
+                                    <action selector="segmentedClicked:" destination="Sih-Bt-Gfu" eventType="valueChanged" id="J5M-mE-Q7s"/>
+                                </connections>
                             </segmentedControl>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="pob-cw-dkn">
-                                <rect key="frame" x="10" y="169" width="373" height="605"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="4vI-g9-47X">
+                                <rect key="frame" x="10" y="204" width="373" height="570"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            </tableView>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="EFR-i0-HDz">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="iDh-3z-vR6">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="VR3-Ut-ZLV">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ynF-Ui-5KB">
+                                <rect key="frame" x="159" y="161" width="75" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <action selector="domesticButtonClicked:" destination="Sih-Bt-Gfu" eventType="touchUpInside" id="eMC-Qm-l56"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zUE-uz-0MM">
+                                <rect key="frame" x="308" y="161" width="75" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <action selector="foreignButtonClicked:" destination="Sih-Bt-Gfu" eventType="touchUpInside" id="N1T-a3-raE"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="164-1c-agm">
+                                <rect key="frame" x="10" y="161" width="75" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <action selector="allButtonClicked:" destination="Sih-Bt-Gfu" eventType="touchUpInside" id="zcv-79-Ixx"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="cCx-sW-Xl8"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="pob-cw-dkn" firstAttribute="leading" secondItem="cCx-sW-Xl8" secondAttribute="leading" constant="10" id="7OV-bV-lym"/>
+                            <constraint firstItem="cCx-sW-Xl8" firstAttribute="bottom" secondItem="4vI-g9-47X" secondAttribute="bottom" constant="10" id="Cea-at-kva"/>
+                            <constraint firstItem="4vI-g9-47X" firstAttribute="leading" secondItem="cCx-sW-Xl8" secondAttribute="leading" constant="10" id="Khw-78-DH5"/>
+                            <constraint firstItem="cCx-sW-Xl8" firstAttribute="trailing" secondItem="4vI-g9-47X" secondAttribute="trailing" constant="10" id="UsI-Se-Rmc"/>
                             <constraint firstItem="cCx-sW-Xl8" firstAttribute="trailing" secondItem="qNw-VL-WqH" secondAttribute="trailing" constant="14" id="YaA-Ia-XeO"/>
+                            <constraint firstItem="4vI-g9-47X" firstAttribute="top" secondItem="qNw-VL-WqH" secondAttribute="bottom" constant="45" id="a1L-9h-2IX"/>
                             <constraint firstItem="qNw-VL-WqH" firstAttribute="leading" secondItem="cCx-sW-Xl8" secondAttribute="leading" constant="14" id="a7H-UV-Uns"/>
                             <constraint firstItem="qNw-VL-WqH" firstAttribute="top" secondItem="cCx-sW-Xl8" secondAttribute="top" constant="10" id="fls-gO-bTO"/>
-                            <constraint firstItem="cCx-sW-Xl8" firstAttribute="trailing" secondItem="pob-cw-dkn" secondAttribute="trailing" constant="10" id="jP0-UR-9Ls"/>
-                            <constraint firstItem="cCx-sW-Xl8" firstAttribute="bottom" secondItem="pob-cw-dkn" secondAttribute="bottom" constant="10" id="t7t-Ph-HYV"/>
-                            <constraint firstItem="pob-cw-dkn" firstAttribute="top" secondItem="qNw-VL-WqH" secondAttribute="bottom" constant="10" id="tzo-wB-z0J"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="myCollectionView" destination="4vI-g9-47X" id="BCw-pb-S0e"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tSP-cq-Dd0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -448,8 +498,8 @@
     </scenes>
     <resources>
         <image name="airplane.circle" catalog="system" width="128" height="123"/>
+        <image name="gamecontroller.fill" catalog="system" width="128" height="79"/>
         <image name="list.bullet.rectangle.portrait" catalog="system" width="115" height="128"/>
-        <image name="numbers.rectangle" catalog="system" width="128" height="93"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
